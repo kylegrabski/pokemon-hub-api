@@ -1,14 +1,20 @@
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace PokemonApi.Models;
 
+// @TODO FINISH MAPPING THIS MODEL!!!
 public class Pokemon
 {
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
+
     [BsonElement("name")]
     public string? Name { get; init; }
 
     [BsonElement("abilities")]
-    public string[]? Abilities { get; init; }
+    public AbilityObject[]? Abilities { get; init; }
 
     [BsonElement("base_experience")]
     public int BaseExperience { get; init; }
@@ -25,8 +31,8 @@ public class Pokemon
     [BsonElement("held_items")]
     public string[]? HeldItems { get; init; }
 
-    [BsonElement("id")]
-    public int Id { get; init; }
+    // [BsonElement("id")]
+    // public int Id { get; init; }
 
     [BsonElement("is_default")]
     public bool IsDefault { get; init; }
@@ -57,6 +63,17 @@ public class Pokemon
 
     [BsonElement("weight")]
     public int Weight { get; init; }
+}
+
+public class AbilityObject
+{
+    [BsonElement("ability")]
+    public object? Ability { get; init; }
+
+    [BsonElement("is_hidden")]
+    public bool? IsHidden { get; init; }
+    [BsonElement("slot")]
+    public int? Slot { get; init; }
 }
 
 public class SpeciesObject
