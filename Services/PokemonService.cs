@@ -8,8 +8,7 @@ public class PokemonService
 {
     private readonly IMongoCollection<Pokemon> _pokemonCollection;
 
-    public PokemonService(
-        IOptions<PokemonDatabaseSettings> pokemonDatabaseSettings)
+    public PokemonService(IOptions<PokemonDatabaseSettings> pokemonDatabaseSettings)
     {
         var mongoClient = new MongoClient(
             pokemonDatabaseSettings.Value.ConnectionString);
