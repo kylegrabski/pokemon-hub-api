@@ -3,16 +3,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace PokemonApi.Models;
 
-// @TODO FINISH MAPPING THIS MODEL!!!
 public class Pokemon
 {
-    // [BsonId]
-    // [BsonRepresentation(BsonType.ObjectId)]
-    // public string? MongoId { get; set; }
-
-    // [BsonElement("name")]
-    // public string? Name { get; init; }
-
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? MongoId { get; set; }
