@@ -17,7 +17,7 @@ public class PokemonController : ControllerBase
     public async Task<List<Pokemon>> Get() =>
         await _pokemonService.GetAsync();
 
-    [HttpGet("{name:length(24)}")]
+    [HttpGet("{Name}")]
     public async Task<ActionResult<Pokemon>> Get(string name)
     {
         var pokemon = await _pokemonService.GetAsync(name);
