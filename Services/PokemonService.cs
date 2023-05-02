@@ -26,13 +26,16 @@ public class PokemonService
     // Get All Pokemon
     public async Task<List<Pokemon>> GetAsync() 
     {
-        Console.WriteLine("HIT");
+        Console.WriteLine("Get All HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
 
     }
 
     // Get Pokemon by Name
-    public async Task<Pokemon?> GetAsync(string name) =>
-        await _pokemonCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
+    public async Task<Pokemon?> GetAsync(string name)
+    {
+        Console.WriteLine("Get Name HIT");
+        return await _pokemonCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
+    }
 
 }
