@@ -21,14 +21,11 @@ public class PokemonService
             pokemonDatabaseSettings.Value.CollectionName);
     }
 
-    // TODO Change task to something pokemon related
-    // ORRR Is task the usual name for this???
     // Get All Pokemon
     public async Task<List<Pokemon>> GetAsync() 
     {
         Console.WriteLine("Get All HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
-
     }
 
     // Get Pokemon by Name
