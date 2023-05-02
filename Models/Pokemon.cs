@@ -6,9 +6,16 @@ namespace PokemonApi.Models;
 // @TODO FINISH MAPPING THIS MODEL!!!
 public class Pokemon
 {
+    // [BsonId]
+    // [BsonRepresentation(BsonType.ObjectId)]
+    // public string? MongoId { get; set; }
+
+    // [BsonElement("name")]
+    // public string? Name { get; init; }
+
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string? Id { get; set; }
+    public string? MongoId { get; set; }
 
     [BsonElement("name")]
     public string? Name { get; init; }
@@ -19,47 +26,31 @@ public class Pokemon
     [BsonElement("base_experience")]
     public int BaseExperience { get; init; }
 
-    [BsonElement("forms")]
-    public string[]? Forms { get; init; }
-
-    [BsonElement("game_indices")]
-    public string[]? GameIndices { get; init; }
-
     [BsonElement("height")]
     public int Height { get; init; }
 
-    [BsonElement("held_items")]
-    public string[]? HeldItems { get; init; }
-
-    // [BsonElement("id")]
-    // public int Id { get; init; }
-
-    [BsonElement("is_default")]
-    public bool IsDefault { get; init; }
-
-    [BsonElement("location_area_encounters")]
-    public string? LocationAreaEncounters { get; init; }
+    [BsonElement("id")]
+    public int Id { get; init; }
 
     [BsonElement("moves")]
-    public string[]? Moves { get; init; }
+    public object[]? Moves { get; init; }
 
     [BsonElement("order")]
     public int Order { get; init; }
 
-    [BsonElement("past_types")]
-    public string[]? PastTypes { get; init; }
-
     [BsonElement("species")]
-    public string? Species { get; init; }
+    public object? Species { get; init; }
 
     [BsonElement("sprites")]
-    public string? Sprites { get; init; }
+    public object? Sprites { get; init; }
+    // public SpritesObject? Sprites { get; init; }
 
     [BsonElement("stats")]
-    public string[]? Stats { get; init; }
+    public List<Object>? Stats { get; init; }
 
     [BsonElement("types")]
-    public string[]? Types { get; init; }
+    public List<Object>? Types { get; init; }
+    // public Array[]? Types { get; init; }
 
     [BsonElement("weight")]
     public int Weight { get; init; }
@@ -75,16 +66,16 @@ public class AbilityObject
     [BsonElement("slot")]
     public int? Slot { get; init; }
 }
+// public class MovesObject
+// {
+//     [BsonElement("move")]
+//     public object? Move { get; init; }
 
-public class SpeciesObject
-{
-    [BsonElement("name")]
-    public string? Name { get; init; }
-
-    [BsonElement("url")]
-    public string? Url { get; init; }
-}
-
+//     [BsonElement("is_hidden")]
+//     public bool? IsHidden { get; init; }
+//     [BsonElement("slot")]
+//     public int? Slot { get; init; }
+// }
 public class SpritesObject
 {
     [BsonElement("back_default")]
@@ -92,4 +83,7 @@ public class SpritesObject
 
     [BsonElement("front_default")]
     public string? FrontDefault { get; init; }
+
+    [BsonElement("back_female")]
+    public string? BackFemale { get; init; }
 }
