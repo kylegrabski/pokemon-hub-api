@@ -10,12 +10,13 @@ Used to connect with the Front End in creating a Pokedex, User Favorites, Mock P
 - Redis (NOT YET IMPLEMENTED)
 
 #### CURRENTLY WORKING ON 
-- Creating additional routes:
-- - Store favorite Pokemon
-- - Store 6 Pokemon 'team'
-- - Add User
-- - User Authentication
-- - Computer Selected Pokemon Team
-- - Computer Selected Moves during Battles
-- Redis Caching
-- Discover SQL over NOSQL Database pros/cons (Probably will change from MongoDB to PostgreSQL)
+- [X] Add pagination
+- [ ] Creating additional routes:
+- - [ ] Store favorite Pokemon
+- - [ ] Store 6 Pokemon 'team'
+- [ ] Add User
+- [ ] User Authentication
+- [ ] Computer Selected Pokemon Team
+- [ ] Computer Selected Moves during Battles
+- [ ] Redis Caching
+- [ ] Discover SQL over NOSQL Database pros/cons (Probably will change from MongoDB to PostgreSQL)
