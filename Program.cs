@@ -3,13 +3,10 @@ using PokemonApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.Configure<PokemonDatabaseSettings>(
     builder.Configuration.GetSection("PokemonDatabase"));
 
-// Create Singleton class for Pokemon/MongoDB service
 builder.Services.AddSingleton<PokemonService>();
-
 
 builder.Services.AddCors(options =>
 {
