@@ -7,7 +7,6 @@ Used to connect with the Front End in creating a Pokedex, User Favorites, Mock P
 ### Technologies Used
 - ASP.NET Framework 
 - MongoDB 
-- Redis (NOT YET IMPLEMENTED)
 
 #### CURRENTLY WORKING ON 
 - [X] Add pagination
