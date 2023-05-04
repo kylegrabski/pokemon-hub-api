@@ -13,7 +13,7 @@ Used to connect with the Front End in creating a Pokedex, User Favorites, Mock P
 - [ ] Creating additional routes:
 - - [ ] Store favorite Pokemon
 - - [ ] Store 6 Pokemon 'team'
-- [ ] Add User
+- - [ ] Add User
 - [ ] User Authentication
 - [ ] Computer Selected Pokemon Team
 - [ ] Computer Selected Moves during Battles
