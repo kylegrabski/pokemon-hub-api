@@ -20,7 +20,7 @@ public class PokemonController : ControllerBase
     public async Task<ActionResult<IEnumerable<Pokemon>>> Get(int pageNumber, int pageSize)
     {
         Console.WriteLine($"{pageNumber} - {pageSize}");
-        var pokemon = await _pokemonService.GetAsync();
+        var pokemon = await _pokemonService.GetAllPokemon();
 
         var pagedPokemon = pokemon.Skip((pageNumber - 1) * pageSize).Take(pageSize);
 
@@ -30,7 +30,7 @@ public class PokemonController : ControllerBase
     [HttpGet("{Name}")]
     public async Task<ActionResult<Pokemon>> Get(string name)
     {
-        var pokemon = await _pokemonService.GetAsync(name);
+        var pokemon = await _pokemonService.GetPokemonByName(name);
 
         if (pokemon is null)
         {
