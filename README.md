@@ -11,6 +11,8 @@ Used to connect with the Front End in creating a Pokedex, User Favorites, Mock P
 #### CURRENTLY WORKING ON 
 - [X] Add pagination
 - [ ] Creating additional routes:
+- - [X] Get All Pokemon Route
+- - [X] Get Paginated Pokemon Route
 - - [ ] Store favorite Pokemon
 - - [ ] Store 6 Pokemon 'team'
 - - [ ] Add User
