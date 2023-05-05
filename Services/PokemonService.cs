@@ -21,9 +21,16 @@ public class PokemonService
     }
 
     // Get All Pokemon
-    public async Task<List<Pokemon>> GetAllPokemon() 
+    public async Task<List<Pokemon>> GetAllPokemon()
     {
-        Console.WriteLine("Get All HIT");
+        Console.WriteLine("Get Paginated HIT");
+        return await _pokemonCollection.Find(_ => true).ToListAsync();
+    }
+
+    // Get 51 Pokemon at a time
+    public async Task<List<Pokemon>> GetPaginatedPokemon() 
+    {
+        Console.WriteLine("Get Paginated HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
 

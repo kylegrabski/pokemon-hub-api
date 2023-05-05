@@ -13,14 +13,15 @@ public class PokemonController : ControllerBase
     public PokemonController(PokemonService pokemonService) => 
         _pokemonService = pokemonService;
 
-    // [HttpGet]
-    // public async Task<List<Pokemon>> Get() =>
-    //     await _pokemonService.GetAsync();
+    [HttpGet]
+    public async Task<List<Pokemon>> Get() =>
+        await _pokemonService.GetAllPokemon();
+    
     [HttpGet("{pageNumber}/{pageSize}")]
     public async Task<ActionResult<IEnumerable<Pokemon>>> Get(int pageNumber, int pageSize)
     {
         Console.WriteLine($"{pageNumber} - {pageSize}");
-        var pokemon = await _pokemonService.GetAllPokemon();
+        var pokemon = await _pokemonService.GetPaginatedPokemon();
 
         var pagedPokemon = pokemon.Skip((pageNumber - 1) * pageSize).Take(pageSize);
 
