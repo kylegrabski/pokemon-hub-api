@@ -30,6 +30,7 @@ public class PokemonService
     // Get 51 Pokemon at a time
     public async Task<List<Pokemon>> GetPaginatedPokemon() 
     {
+        //@TODO Use MongoDB aggregation to actually paginate, not get them all then slice them in the controller         
         Console.WriteLine("Get Paginated HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
