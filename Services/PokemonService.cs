@@ -23,7 +23,7 @@ public class PokemonService
     // Get All Pokemon
     public async Task<List<Pokemon>> GetAllPokemon()
     {
-        Console.WriteLine("Get Paginated HIT");
+        Console.WriteLine("Get All HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
 
