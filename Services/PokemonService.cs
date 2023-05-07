@@ -23,7 +23,6 @@ public class PokemonService
     // Get All Pokemon
     public async Task<List<Pokemon>> GetAllPokemon()
     {
-        Console.WriteLine("Get All HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
 
@@ -31,14 +30,12 @@ public class PokemonService
     public async Task<List<Pokemon>> GetPaginatedPokemon() 
     {
         //@TODO Use MongoDB aggregation to actually paginate, not get them all then slice them in the controller         
-        Console.WriteLine("Get Paginated HIT");
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
 
     // Get Pokemon by Name
     public async Task<Pokemon?> GetPokemonByName(string name)
     {
-        Console.WriteLine("Get Name HIT");
         return await _pokemonCollection.Find(x => x.Name == name).FirstOrDefaultAsync();
     }
 
