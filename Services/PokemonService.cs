@@ -4,6 +4,7 @@ using MongoDB.Driver;
 
 namespace PokemonApi.Services;
 
+// @TODO Restructure all of this. Create an interface to use.
 public class PokemonService
 {
     private readonly IMongoCollection<Pokemon> _pokemonCollection;
@@ -29,7 +30,8 @@ public class PokemonService
     // Get 51 Pokemon at a time
     public async Task<List<Pokemon>> GetPaginatedPokemon() 
     {
-        //@TODO Use MongoDB aggregation to actually paginate, not get them all then slice them in the controller         
+        //@TODO Use MongoDB aggregation to actually paginate, not get them all then slice them in the controller      
+        // @TODO Create a MongodDB repository to call that will handle the mongo queries.
         return await _pokemonCollection.Find(_ => true).ToListAsync();
     }
 
